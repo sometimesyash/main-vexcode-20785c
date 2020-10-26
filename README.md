@@ -20,7 +20,7 @@ Also install the Github CLI from [this link](https://cli.github.com/).
 
 Usually, some developers use a text editor to edit code. Whereas VexCode is one of these, it only works for VEX files. I recommended downloading [Atom](https://atom.io/) from the link to help download.
 
-##How To Use
+## How To Use
 
 This is really important, and I would really recommended reading through this thoroughly.
 

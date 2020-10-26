@@ -42,7 +42,7 @@ Editing the code is simple with VexCode - open the code with V5 Text and you're 
 Pushing the code is fairly simple, but everyone **needs** to be doing this for every change made. There are also two ways of doing this:
 
 + Use the website to create a new branch, commit your code (by uploading the code), and send a pull request using the button.
-+ Use the CLI - type `git commit -m "Reason for pushing"` (make sure the target is your branch) and it sends the code to your local repo, and send that to the entire workspace by `git push`
++ Use the CLI - branch the main using `git branch -M nameOfBranch`, then push the code to your branch by `git push https://url nameOfBranch`, then send a pull request by `git request-pull https://url master`
 
 The Admin (Yash) will have control of accepting / rejecting pull requests.
 

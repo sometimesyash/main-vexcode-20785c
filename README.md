@@ -1,6 +1,6 @@
 # The README for The Official 20785C Account
 
-A quick guide on installation, how to use and rules for the Github repo of 20785C
+A quick guide on installation, how to use and rules for the Github repo of 20785C by Yash
 
 ## Installation guide
 

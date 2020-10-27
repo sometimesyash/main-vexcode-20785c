@@ -183,11 +183,19 @@
 using namespace vex;
 
 //Variable Declaration
+
 bool leftSideSpin;
 bool rightSideSpin;
 std::ofstream ofs;
 
 // MARK: Adding a library for ease-of-use
+
+/*
+
+A library drastically reduces the numbers of lines of code by creating a set of 'Void' function -
+functions without a return value, that would be made to reduce repeating certain instructions.
+
+*/
 
 void driveForward(int rotations){ //gets the motors to drive forward for x rotations
 
@@ -256,7 +264,14 @@ void rollers(int speed){
 
 //MARK: The Analysis system
 
-bool areSpinning(){ //Chacks if the system is spinning or not
+/*
+
+This helps us calculate certain data that can be used to determine the efficency of the motors, the brain etc,
+in order to determine whether our design and program is best optimised for the equipment we have. 
+
+*/
+
+bool areSpinning(){ //Checks if the system is spinning or not
 
   bool isWorking;
 
@@ -314,10 +329,6 @@ int calculateAverage(){
 int analyseActions(){
 
   //Calculate the data
-
-  /* Put into the SD Card
-  Brain.SDcard.savefile("analyse.h", data, sizeof(data));
-  */
 
   int battery = Brain.Battery.voltage();
   int batteryChange = 0;
@@ -451,18 +462,38 @@ int analyse(){
 
 
 
+
+
+
 int main() {
 
   // Initializing Robot Configuration. DO NOT REMOVE!
 
-  task analysis = task(analyse); //Using dual tasks for multitasking
+  task analysis = task(analyse); //Using dual tasks for multitasking - the analysis runs seperately at all times.
   
+  //MARK: Setup
+
   vexcodeInit();
   wait(200, msec);
 
   while(Inertial20.isCalibrating()) {
     wait(5, msec);
   }
+
+  /*
+  
+  The autonomous period has been broken into phases, to ensure that collective error does not occur. Collective error 
+  occurs when a small error early on can throw off the entire autonomous period.
+
+  Phases also help with our AGILE Development method: allowing us to gradually deploy and push the code instead of the 'Waterfall method', where 
+  everything is pushed at the end
+  
+  */
+
+
+  //MARK: Phase 1
+  
+
 
   
 }
